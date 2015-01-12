@@ -1,28 +1,37 @@
-/*
- * HolonomicDrive.cpp
- *
- *  Created on: 10 Jan 2015
- *      Author: lucien
- */
-
 #include "HolonomicDrive.h"
+#include "../../RobotMap.h"
 
-void HolonomicDrive :: Initialize(){
-
+HolonomicDrive::HolonomicDrive():CommandBase("HolonomicDrive"){
+    Requires(chassis);
 }
 
-void HolonomicDrive :: Execute(){
-
+void HolonomicDrive::Initialize(){
 }
 
-bool HolonomicDrive :: IsFinished(){
-   return false;
+void HolonomicDrive::Execute(){
+
+    double x = oi->getJoyDrvY();
+    double y = -oi->getJoyDrvX();
+    double z = oi->getJoyDrvZ();
+    double throttle = oi->getJoyDrvThrottle();
+
+
+    chassis->drive(x, y, z, throttle);
+
+    SmartDashboard::PutNumber("Joystick x", x);
+    SmartDashboard::PutNumber("Joystick y", y);
+    SmartDashboard::PutNumber("Joystick z", z);
+    SmartDashboard::PutNumber("Joystick throttle", throttle);
 }
 
-void HolonomicDrive :: End(){
-
+bool HolonomicDrive::IsFinished(){
+    return false;
 }
 
-void HolonomicDrive :: Interrupted(){
+void HolonomicDrive::End(){
+    chassis->drive(0,0,0,0);
+}
 
+void HolonomicDrive::Interrupted(){
+    End();
 }

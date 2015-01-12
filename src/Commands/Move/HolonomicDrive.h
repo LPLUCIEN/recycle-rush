@@ -1,24 +1,17 @@
-/*
- * HolonomicDrive.h
- *
- *  Created on: 10 Jan 2015
- *      Author: lucien
- */
+#ifndef HOLONOMICDRIVE
+#define HOLONOMICDRIVE
 
-#ifndef SRC_COMMANDS_HOLONOMICDRIVE_H_
-#define SRC_COMMANDS_HOLONOMICDRIVE_H_
-
-#include <CommandBase.h>
+#include "../../CommandBase.h"
 
 class HolonomicDrive: public CommandBase{
     public:
-        void Initialize();
-        void Execute();
-        bool IsFinished();
-        void End();
-        void Interrupted();
+        HolonomicDrive();
+        virtual void Initialize();
+        virtual void Execute();
+        virtual bool IsFinished();
+        virtual void End();
+        virtual void Interrupted();
 };
 
+#endif
 
-
-#endif /* SRC_COMMANDS_HOLONOMICDRIVE_H_ */
