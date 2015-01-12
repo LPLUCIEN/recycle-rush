@@ -4,10 +4,11 @@
 #include "Commands/Subsystem.h"
 #include "WPILib.h"
 
-class Elevator: public Subsystem
-{
-private:
-public:
+class Elevator: public Subsystem{
+    private:
+
+    public:
+
 };
 
 #endif
