@@ -1,10 +1,10 @@
-#ifndef CHASSIS
-#define CHASSIS
+#ifndef ELEVATOR
+#define ELEVATOR
 
 #include "Commands/Subsystem.h"
 #include "WPILib.h"
 
-class Chassis: public Subsystem
+class Elevator: public Subsystem
 {
 private:
 public:
