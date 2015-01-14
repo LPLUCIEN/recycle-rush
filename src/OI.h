@@ -8,7 +8,6 @@ class OI
 private:
     Joystick* joyDrv;
 
-    double applyDeadZone(double, double);
 public:
 	OI();
 	Joystick *getJoyDrv();

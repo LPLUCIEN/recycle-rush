@@ -10,9 +10,9 @@ void HolonomicDrive::Initialize(){
 
 void HolonomicDrive::Execute(){
 
-    double x = oi->getJoyDrvY();
+    double x = -oi->getJoyDrvY();
     double y = -oi->getJoyDrvX();
-    double z = oi->getJoyDrvZ();
+    double z = -oi->getJoyDrvZ();
     double throttle = oi->getJoyDrvThrottle();
 
 

@@ -1,11 +1,16 @@
 #include "WPILib.h"
 #include "CommandBase.h"
+#include "Commands/Move/HolonomicDrive.h"
 
 class Robot: public IterativeRobot
 {
 private:
 	Command *autonomousCommand;
 	LiveWindow *lw;
+
+
+
+
 
 	void RobotInit()
 	{
@@ -37,11 +42,14 @@ private:
 		// this line or comment it out.
 		if (autonomousCommand != NULL)
 			autonomousCommand->Cancel();
+
+
 	}
 
 	void TeleopPeriodic()
 	{
 		Scheduler::GetInstance()->Run();
+
 	}
 
 	void TestPeriodic()
