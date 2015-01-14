@@ -20,9 +20,9 @@ Chassis :: ~Chassis(){
 void Chassis :: drive(double vX, double vY, double vZ, double Throttle){
     double vMotor[4];
 
-    vMotor[0] = 0 - vY - vZ;
+    vMotor[0] = 0 - vY - K * vZ;
     vMotor[1] = vX + 0 - vZ;
-    vMotor[2] = 0 + vY - vZ;
+    vMotor[2] = 0 + vY - K * vZ;
     vMotor[3] = -vX + 0 - vZ;
 
     double vmax = 1.0;
